@@ -1,5 +1,0 @@
-/* Your custom CSS */
-
-body { font-size: 16px !important; }
-
-.header { display: none; }
