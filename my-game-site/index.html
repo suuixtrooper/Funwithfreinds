@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fun With Friends</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=MedievalSharp&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HOME / LANDING ===== -->
+<section id="home" class="screen active">
+  <div class="stars"></div>
+  <div class="fog"></div>
+  <h1 class="rpg-title glitch" data-text="FUN WITH FRIENDS">FUN WITH FRIENDS</h1>
+  <p class="subtitle">⚔ Enter the Realm of Three Heroes ⚔</p>
+  <button class="rpg-btn glow" onclick="showSelect()">▶ PLAY GAME</button>
+</section>
+
+<!-- ===== CHARACTER SELECT ===== -->
+<section id="select" class="screen">
+  <div class="stars"></div>
+  <h1 class="rpg-title small" data-text="CHOOSE U WANT PERSONAL">CHOOSE U WANT PERSONAL</h1>
+
+  <div class="cards">
+    <div class="card" onclick="pick('shadin')">
+      <img src="shadin.png" alt="Shadin">
+      <h2>SHADIN</h2>
+      <p class="tag">🔥 The Flame Knight</p>
+      <button class="rpg-btn play-btn">PLAY</button>
+    </div>
+    <div class="card" onclick="pick('ashmil')">
+      <img src="ashmil.png" alt="Ashmil">
+      <h2>ASHMIL</h2>
+      <p class="tag">⚡ Storm Warrior</p>
+      <button class="rpg-btn play-btn">PLAY</button>
+    </div>
+    <div class="card" onclick="pick('shifin')">
+      <img src="shifin.png" alt="Shifin">
+      <h2>SHIFIN</h2>
+      <p class="tag">🌙 Shadow Mage</p>
+      <button class="rpg-btn play-btn">PLAY</button>
+    </div>
+  </div>
+  <button class="rpg-btn back" onclick="showHome()">◀ HOME</button>
+</section>
+
+<script>
+function showSelect(){
+  document.getElementById('home').classList.remove('active');
+  document.getElementById('select').classList.add('active');
+}
+function showHome(){
+  document.getElementById('select').classList.remove('active');
+  document.getElementById('home').classList.add('active');
+}
+function pick(name){
+  window.location.href = 'game.html?hero=' + name;
+}
+</script>
+</body>
+</html>
